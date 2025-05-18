@@ -1,0 +1,18 @@
+# Node Modules
+node_modules/
+
+# Playwright artifacts
+test-results/
+playwright-report/
+playwright/.cache/
+.local-browsers/
+
+# Authentication
+playwright/.auth/
+
+# Debug and trace files
+trace.zip
+*.har
+
+# System files
+.DS_Store
