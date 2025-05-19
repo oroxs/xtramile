@@ -46,4 +46,12 @@ test('Logout from the app and verify redirect to login page', async ({ page }) =
     await expect(page.locator('#login-button')).toBeVisible();
   });
 
+test('Login fails with locked out user', async ({ page }) => {
+  const loginPage = new LoginPage(page);
+  await loginPage.goto();
 
+  await loginPage.login(user.lockedOutUser.username,user.lockedOutUser.password);
+
+  await expect(loginPage.errorMessage).toBeVisible();
+  await expect(loginPage.errorMessage).toContainText('Sorry, this user has been locked out.');
+});
