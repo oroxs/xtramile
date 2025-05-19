@@ -64,6 +64,7 @@ cd xtramile
 
 ```bash
 npm install
+npx playwright install
 ```
 
 3. **Run all tests**
